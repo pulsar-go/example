@@ -1,0 +1,12 @@
+[server]
+    host = ""
+    port = "8080"
+    development = true
+
+[https]
+    enabled = true
+    cert_file = "./server.cert"
+    key_file = "./server.key"
+
+[views]
+    path = "./views"
