@@ -8,7 +8,7 @@ import (
 	"github.com/pulsar-go/pulsar/router"
 )
 
-func Middle(next router.Handler) router.Handler {
+func Sample(next router.Handler) router.Handler {
 	return router.Handler(func(req *request.HTTP) response.HTTP {
 		log.Println("Before route middleware")
 		r := next(req)
