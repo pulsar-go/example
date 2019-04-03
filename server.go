@@ -13,6 +13,8 @@ func main() {
 	config.Set("./server.toml")
 	// Set the application routes.
 	routes.Register()
+	// Set the database models.
+	models.Register()
 	// Serve the HTTP server.
 	log.Fatalln(pulsar.Serve())
 }
