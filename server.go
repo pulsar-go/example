@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"./routes"
+	"github.com/pulsar-go/example/routes"
 	"github.com/pulsar-go/pulsar"
 	"github.com/pulsar-go/pulsar/config"
 )
@@ -13,8 +13,6 @@ func main() {
 	config.Set("./server.toml")
 	// Set the application routes.
 	routes.Register()
-	// Set the database models.
-	models.Register()
 	// Serve the HTTP server.
 	log.Fatalln(pulsar.Serve())
 }

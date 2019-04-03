@@ -1,8 +1,9 @@
 package models
 
-import "github.com/pulsar-go/pulsar/database"
+import (
+	"github.com/pulsar-go/pulsar/database"
+)
 
-// Register registers the models to the database.
-func Register() {
+func init() {
 	database.AddModels(&User{})
 }
