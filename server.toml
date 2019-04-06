@@ -7,7 +7,7 @@
 
     # Port specifies the port that is going to
     # be used to run the HTTP server.
-    port = "8080"
+    port = "9000"
 
     # Development specifies if the server is going
     # to run in development mode, allowing some output
@@ -24,7 +24,7 @@
     # enabled. HTTPs should always be used.
     # Only a HTTP or HTTPs server can be fired
     # so if enabled, no HTTP server will be provided.
-    enabled = true
+    enabled = false
 
     # Certificate file that the HTTPs
     # server will use to encrypt connections.

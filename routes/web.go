@@ -18,7 +18,7 @@ func Register() {
 		Get("/email", sample.Send).
 		Group(&router.Options{Prefix: "/user", Middleware: middlewares.Sample}, func(routes *router.Router) {
 			routes.Get("/", user.Index).
-				Get("/create/:name/:age", user.Store).
+				Get("/create/:name/:age/:random", user.Store).
 				Get("/update/:id/:name", user.Update).
 				Get("/delete/:id", user.Delete).
 				Get("/search/:name", user.Search)
