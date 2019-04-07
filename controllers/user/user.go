@@ -4,7 +4,7 @@ import (
 	"strconv"
 
 	"github.com/pulsar-go/example/models"
-	"github.com/pulsar-go/pulsar/database"
+	"github.com/pulsar-go/pulsar/db"
 	"github.com/pulsar-go/pulsar/request"
 	"github.com/pulsar-go/pulsar/response"
 )
@@ -17,7 +17,7 @@ type Data struct {
 // Index function
 func Index(req *request.HTTP) response.HTTP {
 	users := []models.User{}
-	database.Take(2).Find(&users)
+	db.Builder.Take(2).All(&users)
 	data := Data{Users: users}
 	return response.View("users.gohtml", data)
 }
@@ -26,7 +26,7 @@ func Index(req *request.HTTP) response.HTTP {
 func Search(req *request.HTTP) response.HTTP {
 	name := req.Params.ByName("name")
 	users := []models.User{}
-	database.Where("name", name).Find(&users) // Find returns more than 1
+	db.Builder.Where("name", name).Find(&users) // Find returns more than 1
 	return response.JSON(users)
 }
 
@@ -40,7 +40,7 @@ func Store(req *request.HTTP) response.HTTP {
 		ageInt = 0
 	}
 	user := models.User{Name: name, Age: uint(ageInt), Random: rand}
-	database.Save(&user)
+	db.Builder.Save(&user)
 	return response.JSON(user)
 }
 
@@ -49,15 +49,15 @@ func Update(req *request.HTTP) response.HTTP {
 	id := req.Params.ByName("id")
 	name := req.Params.ByName("name")
 	user := models.User{}
-	database.First(&user, id)
+	db.Builder.First(&user, id)
 	user.Name = name
-	database.Save(&user)
+	db.Builder.Save(&user)
 	return response.JSON(user)
 }
 
 // Delete ...
 func Delete(req *request.HTTP) response.HTTP {
 	id := req.Params.ByName("id")
-	database.Where("ID", id).Delete(&models.User{})
+	db.Builder.Where("ID", id).Delete(&models.User{})
 	return response.Text("User " + id + " deleted")
 }

@@ -1,10 +1,10 @@
 package models
 
-import "github.com/pulsar-go/pulsar/database"
+import "github.com/pulsar-go/pulsar/db"
 
 // User is the model representing the DB users table.
 type User struct {
-	database.Model
+	db.Model
 	Name   string
 	Age    uint
 	Random string
