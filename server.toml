@@ -106,10 +106,13 @@
     identity = ""
     # Username used to authenticate when connecting
     # to the host. Part of the credentials.
-    username = ""
+    username = "3856556947d60b99b"
     # Password used to authenticate when connecting
     # to the host. Part of the credentials.
-    password = ""
+    password = "71725c88332296"
     # From determines who the mail is going to be sent
     # from. This setting is the default from address used.
     from = "mail@example.com"
+
+[queue]
+    routines = "8"

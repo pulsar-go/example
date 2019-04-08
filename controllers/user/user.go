@@ -1,10 +1,13 @@
 package user
 
 import (
+	"log"
 	"strconv"
+	"time"
 
 	"github.com/pulsar-go/example/models"
 	"github.com/pulsar-go/pulsar/db"
+	"github.com/pulsar-go/pulsar/queue"
 	"github.com/pulsar-go/pulsar/request"
 	"github.com/pulsar-go/pulsar/response"
 )
@@ -60,4 +63,17 @@ func Delete(req *request.HTTP) response.HTTP {
 	id := req.Params.ByName("id")
 	db.Builder.Where("ID", id).Delete(&models.User{})
 	return response.Text("User " + id + " deleted")
+}
+
+// SampleJob ...
+func SampleJob(req *request.HTTP) response.HTTP {
+	for range [9]int{} {
+		queue.NewJob(func() {
+			for i := range [60]int{} {
+				log.Print(i)
+				time.Sleep(250 * time.Millisecond)
+			}
+		}).Queue(true).Dispatch()
+	}
+	return response.Text("Job is now running...")
 }

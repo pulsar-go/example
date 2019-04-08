@@ -16,6 +16,7 @@ func Register() {
 			return response.Text("Accept-Encoding: " + req.Request.Header.Get("Accept-Encoding"))
 		}).
 		Get("/email", sample.Send).
+		Get("/job", user.SampleJob).
 		Group(&router.Options{Prefix: "/user", Middleware: middlewares.Sample}, func(routes *router.Router) {
 			routes.Get("/", user.Index).
 				Get("/create/:name/:age/:random", user.Store).
