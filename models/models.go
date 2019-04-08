@@ -1,9 +1,9 @@
 package models
 
 import (
-	"github.com/pulsar-go/pulsar/database"
+	"github.com/pulsar-go/pulsar/db"
 )
 
 func init() {
-	database.AddModels(&User{})
+	db.AddModels(&User{})
 }
