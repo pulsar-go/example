@@ -10,7 +10,7 @@
     <h1>All Users</h1>
     <ul>
       {{range .Users}}
-        <li>Name: {{ .Name }}, Age: {{ .Age }}</li>
+        <li>{{ .ID }}, Name: {{ .Name }}, Age: {{ .Age }}</li>
       {{ end }}
     </ul>
 </body>

@@ -17,7 +17,7 @@ type Data struct {
 // Index function
 func Index(req *request.HTTP) response.HTTP {
 	users := []models.User{}
-	db.Builder.Take(3).All(&users)
+	db.Builder.Skip(1).Limit(3).All(&users)
 	data := Data{Users: users}
 	return response.View("users.gohtml", data)
 }
@@ -26,7 +26,7 @@ func Index(req *request.HTTP) response.HTTP {
 func Search(req *request.HTTP) response.HTTP {
 	name := req.Params.ByName("name")
 	users := []models.User{}
-	db.Builder.Where("name", name).Find(&users) // Find returns more than 1
+	db.Builder.Where(&models.User{Name: name}).Find(&users) // Find returns more than 1
 	return response.JSON(users)
 }
 
