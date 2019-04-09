@@ -22,7 +22,7 @@ func Index(req *request.HTTP) response.HTTP {
 	users := []models.User{}
 	db.Builder.Skip(1).Limit(3).All(&users)
 	data := Data{Users: users}
-	return response.View("users.gohtml", data)
+	return response.View("users", data)
 }
 
 // Search function
