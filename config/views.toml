@@ -1,0 +1,10 @@
+# Views stores all the settings releated
+# to the views stored in the application
+# used when delivering responses from
+# the web server.
+# =======================================
+
+# Path represents the relative or absolute
+# path where the views will come from.
+# It acts as a path prefix when returning views
+path = "./views"

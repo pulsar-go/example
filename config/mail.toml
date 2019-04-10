@@ -1,0 +1,28 @@
+# Mail stores all the information about
+# SMTP mailing to send any form of email.
+# =======================================
+
+# Host determines the SMTP host that
+# is going to be used.
+host = "smtp.mailtrap.io"
+
+# Port determines the SMTP port that
+# is going to be used.
+port = "465"
+
+# Identity determines how the auth is
+# pretended to act as. Usually this
+# should be an empty string.
+identity = ""
+
+# Username used to authenticate when connecting
+# to the host. Part of the credentials.
+username = "3856556947d60b99b"
+
+# Password used to authenticate when connecting
+# to the host. Part of the credentials.
+password = "71725c88332296"
+
+# From determines who the mail is going to be sent
+# from. This setting is the default from address used.
+from = "mail@example.com"

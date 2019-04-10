@@ -1,0 +1,7 @@
+# Queue stores all the information about
+# using queue management
+# =======================================
+
+# Defines the amount of routines which
+# can be executed at the same time
+routines = "8"

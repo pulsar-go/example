@@ -1,0 +1,17 @@
+# Server stores all the settings releated
+# to the HTTP / HTTP server itself.
+# =======================================
+
+# Host determines the IP or name of the
+# HTTP server.
+host = ""
+
+# Port specifies the port that is going to
+# be used to run the HTTP server.
+port = "9000"
+
+# Development specifies if the server is going
+# to run in development mode, allowing some output
+# in the terminal while the application runs giving
+# help and insight of what's going on.
+development = true

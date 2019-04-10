@@ -1,0 +1,23 @@
+# HTTPS stores all the settings releated
+# to the TLS (SSL) settings used to ensure
+# encrypted connections.
+# =======================================
+
+# Enables or disables the HTTPs server.
+# Please notice that this should always be
+# enabled. HTTPs should always be used.
+# Only a HTTP or HTTPs server can be fired
+# so if enabled, no HTTP server will be provided.
+enabled = false
+
+# Certificate file that the HTTPs
+# server will use to encrypt connections.
+# Auto generated if no cert_file and key_file
+# exists in the path provided.
+cert_file = "./server.cert"
+
+# Key file that the HTTPs
+# server will use to encrypt connections.
+# Auto generated if no cert_file and key_file
+# exists in the path provided.
+key_file = "./server.key"
