@@ -8,8 +8,6 @@ import (
 )
 
 func main() {
-	// Get the settings from the configuration files.
-	// config.Set("./server.toml")
 	// Set the application routes.
 	routes.Register()
 	// Serve the HTTP server.

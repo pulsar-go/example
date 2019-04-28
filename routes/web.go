@@ -1,6 +1,8 @@
 package routes
 
 import (
+	"log"
+
 	"github.com/pulsar-go/example/controllers/sample"
 	"github.com/pulsar-go/example/controllers/user"
 	"github.com/pulsar-go/example/middlewares"
@@ -14,6 +16,16 @@ func Register() {
 	router.Routes.
 		Get("/", func(req *request.HTTP) response.HTTP {
 			return response.Text("Accept-Encoding: " + req.Request.Header.Get("Accept-Encoding"))
+		}).
+		Post("/json", func(req *request.HTTP) response.HTTP {
+			data := struct {
+				Name string `json:"name"`
+				Age  int    `json:"age"`
+			}{}
+			if err := req.JSON(&data); err != nil {
+				log.Printf("Error decoding JSON: %s", err)
+			}
+			return response.JSON(data)
 		}).
 		Get("/static", func(req *request.HTTP) response.HTTP {
 			return response.Static("sample")
