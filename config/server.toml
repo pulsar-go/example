@@ -15,3 +15,29 @@ port = "9000"
 # in the terminal while the application runs giving
 # help and insight of what's going on.
 development = true
+
+# allowed_origins is a list of origins a cross-domain request can be executed from.
+# If the special "*" value is present in the list, all origins will be allowed.
+# An origin may contain a wildcard (*) to replace 0 or more characters
+# (i.e.: http://*.domain.com). Usage of wildcards implies a small performance penalty.
+# Only one wildcard can be used per origin.
+# Default value is ["*"]
+allowed_origins = ["*"]
+
+# allowed_headers is list of non simple headers the client is allowed to use with
+# cross-domain requests.
+# If the special "*" value is present in the list, all headers will be allowed.
+# Default value is [] but "Origin" is always appended to the list.
+allowed_headers = ["*"]
+
+# allowed_methods is a list of methods the client is allowed to use with
+# cross-domain requests. Default value is simple methods (HEAD, GET and POST).
+allowed_methods = ["*"]
+
+# exposed_headers indicates which headers are safe to expose to the API of a CORS
+# API specification
+exposed_headers = ["*"]
+
+# allow_credentials indicates whether the request can include user credentials like
+# cookies, HTTP authentication or client side SSL certificates.
+allow_credentials = true

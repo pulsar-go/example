@@ -18,6 +18,9 @@ func Register() {
 			req.Writer.Header().Set("Server", "Pulsar")
 			return response.Text("Accept-Encoding: " + req.Request.Header.Get("Accept-Encoding"))
 		}).
+		Post("/cors", func(req *request.HTTP) response.HTTP {
+			return response.Text("CORS ok")
+		}).
 		Post("/json", func(req *request.HTTP) response.HTTP {
 			data := struct {
 				Name string `json:"name"`
