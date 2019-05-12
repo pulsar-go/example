@@ -32,11 +32,11 @@ allowed_headers = ["*"]
 
 # allowed_methods is a list of methods the client is allowed to use with
 # cross-domain requests. Default value is simple methods (HEAD, GET and POST).
-allowed_methods = ["*"]
+allowed_methods = ["HEAD", "GET", "POST"]
 
 # exposed_headers indicates which headers are safe to expose to the API of a CORS
 # API specification
-exposed_headers = ["*"]
+exposed_headers = []
 
 # allow_credentials indicates whether the request can include user credentials like
 # cookies, HTTP authentication or client side SSL certificates.
