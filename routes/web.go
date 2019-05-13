@@ -2,6 +2,7 @@ package routes
 
 import (
 	"log"
+	"net/http"
 
 	"github.com/pulsar-go/example/controllers/sample"
 	"github.com/pulsar-go/example/controllers/user"
@@ -20,6 +21,11 @@ func Register() {
 		}).
 		Post("/cors", func(req *request.HTTP) response.HTTP {
 			return response.Text("CORS ok")
+		}).
+		Get("/status", func(req *request.HTTP) response.HTTP {
+			return response.JSONWithCode(map[string]string{
+				"error": "Some sample error",
+			}, http.StatusBadRequest)
 		}).
 		Post("/json", func(req *request.HTTP) response.HTTP {
 			data := struct {
