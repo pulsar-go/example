@@ -27,7 +27,7 @@ func Register() {
 				"error": "Some sample error",
 			}, http.StatusBadRequest)
 		}).
-		Post("/json", func(req *request.HTTP) response.HTTP {
+		Get("/json", func(req *request.HTTP) response.HTTP {
 			data := struct {
 				Name string `json:"name"`
 				Age  int    `json:"age"`
