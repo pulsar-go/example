@@ -27,7 +27,14 @@ func Register() {
 				"error": "Some sample error",
 			}, http.StatusBadRequest)
 		}).
-		Get("/json", func(req *request.HTTP) response.HTTP {
+		Post("/json", func(req *request.HTTP) response.HTTP {
+			auth := struct {
+				Token string `json:"token"`
+			}{}
+			if err := req.JSON(&auth); err != nil {
+				log.Printf("Error decoding JSON: %s", err)
+			}
+			log.Println("Auth: " + auth.Token)
 			data := struct {
 				Name string `json:"name"`
 				Age  int    `json:"age"`
