@@ -19,6 +19,9 @@ func Register() {
 			req.Writer.Header().Set("Server", "Pulsar")
 			return response.Text("Accept-Encoding: " + req.Request.Header.Get("Accept-Encoding"))
 		}).
+		Get("/test.css", func(req *request.HTTP) response.HTTP {
+			return response.Asset("test.css")
+		}).
 		Post("/cors", func(req *request.HTTP) response.HTTP {
 			return response.Text("CORS ok")
 		}).
