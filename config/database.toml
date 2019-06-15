@@ -13,7 +13,7 @@ driver = "sqlite3"
 # using sqlite3 driver. If driver is sqlire3
 # the value ':memory:' can also be used to create
 # a temp database stored in memory.
-database = "./sample.db"
+database = "sample.db"
 
 # Host represents the database host where
 # it will connect to. Unused if using
